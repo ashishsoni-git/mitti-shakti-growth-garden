@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Mitti Shakti - Organic Gardening Design System
+   Earthy, natural color palette with forest greens and terracotta browns
+   All colors in HSL format
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    /* Primary: Forest Green */
+    --primary: 142 45% 28%;
+    --primary-foreground: 45 30% 96%;
+
+    /* Background: Warm cream/off-white */
+    --background: 45 30% 96%;
+    --foreground: 30 25% 15%;
+
+    /* Card: Slightly warmer white */
+    --card: 42 35% 94%;
+    --card-foreground: 30 25% 15%;
+
+    /* Popover */
+    --popover: 42 35% 94%;
+    --popover-foreground: 30 25% 15%;
+
+    /* Secondary: Terracotta/Brown */
+    --secondary: 25 55% 45%;
+    --secondary-foreground: 45 30% 96%;
+
+    /* Muted: Soft sage */
+    --muted: 120 15% 88%;
+    --muted-foreground: 30 15% 40%;
+
+    /* Accent: Golden/Amber for highlights */
+    --accent: 38 70% 55%;
+    --accent-foreground: 30 25% 15%;
+
+    /* Destructive */
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 45 30% 96%;
+
+    /* Border and inputs */
+    --border: 30 20% 82%;
+    --input: 30 20% 82%;
+    --ring: 142 45% 28%;
+
+    --radius: 0.75rem;
+
+    /* Sidebar */
+    --sidebar-background: 142 35% 20%;
+    --sidebar-foreground: 45 30% 96%;
+    --sidebar-primary: 38 70% 55%;
+    --sidebar-primary-foreground: 30 25% 15%;
+    --sidebar-accent: 142 30% 25%;
+    --sidebar-accent-foreground: 45 30% 96%;
+    --sidebar-border: 142 25% 30%;
+    --sidebar-ring: 38 70% 55%;
+
+    /* Custom tokens for Mitti Shakti */
+    --earth: 25 35% 30%;
+    --leaf: 120 40% 45%;
+    --soil: 25 45% 25%;
+    --terracotta: 18 50% 50%;
+    --cream: 45 40% 92%;
+    --moss: 90 25% 35%;
+  }
+
+  .dark {
+    --primary: 142 50% 45%;
+    --primary-foreground: 30 25% 10%;
+
+    --background: 30 20% 8%;
+    --foreground: 45 30% 90%;
+
+    --card: 30 18% 12%;
+    --card-foreground: 45 30% 90%;
+
+    --popover: 30 18% 12%;
+    --popover-foreground: 45 30% 90%;
+
+    --secondary: 25 45% 35%;
+    --secondary-foreground: 45 30% 96%;
+
+    --muted: 30 15% 20%;
+    --muted-foreground: 45 15% 65%;
+
+    --accent: 38 60% 45%;
+    --accent-foreground: 45 30% 96%;
+
+    --destructive: 0 55% 40%;
+    --destructive-foreground: 45 30% 96%;
+
+    --border: 30 15% 25%;
+    --input: 30 15% 25%;
+    --ring: 142 50% 45%;
+
+    --sidebar-background: 30 20% 10%;
+    --sidebar-foreground: 45 30% 90%;
+    --sidebar-primary: 142 50% 45%;
+    --sidebar-primary-foreground: 30 25% 10%;
+    --sidebar-accent: 30 15% 18%;
+    --sidebar-accent-foreground: 45 30% 90%;
+    --sidebar-border: 30 15% 25%;
+    --sidebar-ring: 142 50% 45%;
+
+    --earth: 25 30% 50%;
+    --leaf: 120 35% 55%;
+    --soil: 25 40% 35%;
+    --terracotta: 18 45% 55%;
+    --cream: 45 20% 20%;
+    --moss: 90 20% 45%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Source Sans 3', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    @apply font-semibold tracking-tight;
+  }
+}
+
+@layer utilities {
+  .text-gradient {
+    @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+  }
+
+  .organic-shadow {
+    box-shadow: 0 4px 20px -4px hsl(var(--earth) / 0.15),
+                0 8px 40px -8px hsl(var(--moss) / 0.1);
+  }
+
+  .organic-border {
+    @apply border border-border/50;
+    background: linear-gradient(
+      135deg,
+      hsl(var(--card)) 0%,
+      hsl(var(--cream)) 100%
+    );
+  }
+}
